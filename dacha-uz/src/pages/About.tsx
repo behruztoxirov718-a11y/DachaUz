@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { Home, CheckCircle, Banknote, MessageCircle, Map, Send } from 'lucide-react';
 
 const About = () => {
   const navigate = useNavigate();
@@ -6,10 +7,12 @@ const About = () => {
   return (
     <div className="min-h-screen bg-gray-50">
 
-      {/* ── Hero ── */}
+      {/* Hero */}
       <section className="bg-gradient-to-br from-green-900 to-green-700 text-white py-16 px-4 text-center">
         <div className="max-w-2xl mx-auto">
-          <div className="text-5xl mb-4">🏡</div>
+          <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <Home size={32} className="text-white" strokeWidth={1.5} />
+          </div>
           <h1 className="text-3xl md:text-4xl font-extrabold mb-3">Biz haqimizda</h1>
           <p className="text-green-200 text-lg">
             Toshkent viloyatidagi eng yaxshi dachalarni bir joyda
@@ -19,50 +22,49 @@ const About = () => {
 
       <div className="max-w-3xl mx-auto px-4 py-12 space-y-10">
 
-        {/* ── Kim biz ── */}
+        {/* Kim biz */}
         <div className="bg-white rounded-2xl p-6 shadow-sm">
           <h2 className="text-xl font-bold text-gray-900 mb-3">Kim biz?</h2>
           <p className="text-gray-600 leading-relaxed">
-            <strong>DachaUz</strong> — Toshkent viloyati bo'ylab dacha ijarasi bo'yicha
-            ishonchli platforma. Biz Chorvoq, Parkent, Ohangaron va boshqa go'zal
+            <strong>DachaUz</strong> — Toshkent viloyati boylab dacha ijarasi boyicha
+            ishonchli platforma. Biz Chorvoq, Parkent, Ohangaron va boshqa gozal
             hududlardagi dachalarni bir joyda jamlagan holda, sizga oson va qulay
             qidirish imkoniyatini taqdim etamiz.
           </p>
           <p className="text-gray-600 leading-relaxed mt-3">
-            Maqsadimiz — oila va do'stlar bilan unutilmas dam olish uchun eng mos
+            Maqsadimiz — oila va dostlar bilan unutilmas dam olish uchun eng mos
             dachani topishni osonlashtirish.
           </p>
         </div>
 
-        {/* ── Raqamlar ── */}
+        {/* Raqamlar */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { icon: '🏡', value: '50+', label: 'Dacha' },
-            { icon: '📍', value: '9',   label: 'Hudud' },
-            { icon: '😊', value: '500+', label: 'Xursand mijoz' },
-            { icon: '⭐', value: '4.8', label: 'O\'rtacha reyting' },
+            { value: '50+',  label: 'Dacha'           },
+            { value: '9',    label: 'Hudud'           },
+            { value: '500+', label: 'Xursand mijoz'   },
+            { value: '4.8',  label: "Ortacha reyting" },
           ].map((item) => (
             <div key={item.label} className="bg-white rounded-2xl p-5 shadow-sm text-center">
-              <div className="text-3xl mb-2">{item.icon}</div>
-              <div className="text-2xl font-extrabold text-green-700">{item.value}</div>
+              <div className="text-2xl font-extrabold text-green-700 mb-1">{item.value}</div>
               <div className="text-gray-400 text-sm">{item.label}</div>
             </div>
           ))}
         </div>
 
-        {/* ── Nima uchun biz ── */}
+        {/* Nima uchun biz */}
         <div className="bg-white rounded-2xl p-6 shadow-sm">
           <h2 className="text-xl font-bold text-gray-900 mb-5">Nima uchun DachaUz?</h2>
           <div className="space-y-4">
             {[
-              { icon: '✅', title: 'Tekshirilgan dachalar', desc: 'Har bir dacha shaxsan ko\'rib chiqilgan va tasdiqlangan' },
-              { icon: '💰', title: 'Qulay narxlar', desc: 'To\'g\'ridan-to\'g\'ri egadan — vositachilarsiz' },
-              { icon: '📲', title: 'Tezkor bog\'lanish', desc: 'Bron so\'rovi yuborilgach, 1 soat ichida javob' },
-              { icon: '🗺', title: 'Qulay joylashuv', desc: 'Har bir dacha uchun aniq manzil va xarita' },
+              { Icon: CheckCircle,   title: 'Tekshirilgan dachalar', desc: "Har bir dacha shaxsan korib chiqilgan va tasdiqlangan"     },
+              { Icon: Banknote,      title: 'Qulay narxlar',         desc: "Togridan-togri egadan — vositachilarsiz"                  },
+              { Icon: MessageCircle, title: 'Tezkor boglanish',      desc: "Bron sorovi yuborilgach, 1 soat ichida javob"             },
+              { Icon: Map,           title: 'Qulay joylashuv',       desc: "Har bir dacha uchun aniq manzil va xarita"                },
             ].map((item) => (
               <div key={item.title} className="flex gap-4 items-start">
-                <div className="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center text-xl flex-shrink-0">
-                  {item.icon}
+                <div className="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <item.Icon size={20} className="text-green-700" strokeWidth={1.5} />
                 </div>
                 <div>
                   <div className="font-semibold text-gray-800">{item.title}</div>
@@ -73,9 +75,9 @@ const About = () => {
           </div>
         </div>
 
-        {/* ── Bog'lanish ── */}
+        {/* Boglanish */}
         <div className="bg-green-800 rounded-2xl p-6 text-white text-center">
-          <h2 className="text-xl font-bold mb-2">Bog'lanish</h2>
+          <h2 className="text-xl font-bold mb-2">Boglanish</h2>
           <p className="text-green-200 text-sm mb-5">
             Savollaringiz bormi? Telegram orqali yozing!
           </p>
@@ -84,15 +86,15 @@ const About = () => {
               href="https://t.me/your_telegram"
               target="_blank"
               rel="noreferrer"
-              className="bg-white text-green-800 font-bold px-6 py-3 rounded-xl hover:bg-green-50 transition-colors"
+              className="flex items-center justify-center gap-2 bg-white text-green-800 font-bold px-6 py-3 rounded-xl hover:bg-green-50 transition-colors"
             >
-              📲 Telegram
+              <Send size={17} /> Telegram
             </a>
             <button
               onClick={() => navigate('/dachalar')}
-              className="border-2 border-white/40 text-white font-bold px-6 py-3 rounded-xl hover:bg-white/10 transition-colors"
+              className="flex items-center justify-center gap-2 border-2 border-white/40 text-white font-bold px-6 py-3 rounded-xl hover:bg-white/10 transition-colors"
             >
-              🏡 Dachalarni ko'rish
+              <Home size={17} /> Dachalarni korish
             </button>
           </div>
         </div>

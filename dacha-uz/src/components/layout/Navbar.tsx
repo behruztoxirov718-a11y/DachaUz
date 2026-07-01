@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { Home, Send, Menu, X } from 'lucide-react';
+import { Home, Send, Menu, X, Settings } from 'lucide-react';
 
 const navLinks = [
-  { to: '/',              label: 'Bosh sahifa' },
-  { to: '/dachalar',      label: 'Dachalar'    },
+  { to: '/',               label: 'Bosh sahifa'  },
+  { to: '/dachalar',       label: 'Dachalar'     },
   { to: '/biz-haqimizda', label: 'Biz haqimizda' },
 ];
 
@@ -45,8 +45,15 @@ const Navbar = () => {
           ))}
         </nav>
 
-        {/* Desktop CTA */}
-        <div className="hidden md:flex items-center gap-3">
+        {/* Desktop tugmalar */}
+        <div className="hidden md:flex items-center gap-2">
+          <button
+            onClick={() => navigate('/admin')}
+            className="flex items-center gap-1.5 border border-gray-200 text-gray-500 hover:text-green-700 hover:border-green-400 text-sm font-medium px-3 py-2 rounded-xl transition-colors duration-200"
+          >
+            <Settings size={16} />
+            Admin
+          </button>
           <a
             href="https://t.me/your_telegram"
             target="_blank"
@@ -54,7 +61,7 @@ const Navbar = () => {
             className="flex items-center gap-2 bg-green-700 hover:bg-green-600 text-white text-sm font-semibold px-4 py-2 rounded-xl transition-colors duration-200"
           >
             <Send size={16} />
-            Bog'lanish
+            Boglanish
           </a>
         </div>
 
@@ -88,15 +95,20 @@ const Navbar = () => {
               {link.label}
             </NavLink>
           ))}
+          <button
+            onClick={() => { navigate('/admin'); setMenuOpen(false); }}
+            className="flex items-center gap-2 border border-gray-200 text-gray-500 font-medium px-4 py-3 rounded-xl hover:bg-gray-50 transition-colors text-sm mt-1"
+          >
+            <Settings size={16} /> Admin panel
+          </button>
           <a
             href="https://t.me/your_telegram"
             target="_blank"
             rel="noreferrer"
-            className="mt-2 flex items-center justify-center gap-2 bg-green-700 text-white text-sm font-semibold px-4 py-3 rounded-xl text-center"
+            className="flex items-center justify-center gap-2 bg-green-700 text-white text-sm font-semibold px-4 py-3 rounded-xl text-center mt-1"
             onClick={() => setMenuOpen(false)}
           >
-            <Send size={16} />
-            Telegram orqali bog'lanish
+            <Send size={16} /> Telegram orqali boglanish
           </a>
         </div>
       )}

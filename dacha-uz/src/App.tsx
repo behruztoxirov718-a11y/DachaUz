@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
-import Home from './pages';
+import Home from './pages/index';
 import Catalog from './pages/Catalog';
 import DachaDetail from './pages/DachaDetail';
 import Booking from './pages/Booking';
