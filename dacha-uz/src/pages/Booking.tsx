@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, User, Phone, Calendar, Users, MessageSquare, CheckCircle, Loader2, MapPin } from 'lucide-react';
+import { ArrowLeft, User, Calendar, Users, MessageSquare, CheckCircle, Loader2, MapPin } from 'lucide-react';
 import { useDachalar } from '../hooks/useDachalar';
 import { useBooking } from '../hooks/useBooking';
 import { sendBookingToTelegram } from '../utils/telegram';
